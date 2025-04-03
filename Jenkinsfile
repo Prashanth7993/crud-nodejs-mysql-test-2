@@ -12,8 +12,8 @@ pipeline {
                  echo "Docker image build sucessfully completed."
                     withCredentials([usernamePassword(credentialsId: 'Docker_Hub_Credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-                        sh 'docker tag frontend $DOCKER_USER/frontend:v1'
-                        sh 'docker push $DOCKER_USER/frontend:v1'
+                        sh 'docker tag frontend $DOCKER_USER/nodejs-mock-test-2:v1'
+                        sh 'docker push $DOCKER_USER/nodejs-mock-test-2:v1'
                     }
             }
         }    
